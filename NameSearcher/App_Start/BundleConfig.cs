@@ -25,6 +25,7 @@ namespace WebApplication1
                       "~/Content/site.css"));
             bundles.Add(new ScriptBundle("~/bundles/Angular").Include(
                        "~/Scripts/Angular.js",
+                       "~/Scripts/angular-route.js",
                        "~/Scripts/MyScripts/Extractor.js"));
         }
     }

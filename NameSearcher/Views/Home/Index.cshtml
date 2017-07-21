@@ -1,18 +1,22 @@
-﻿<div class="jumbotron" data-ng-app="Extractor" data-ng-controller="NameExtractorController">
+﻿<div class="jumbotron" ng-app="Extractor" ng-controller="NameExtractorController">
     <h1>The Article</h1>
 
-    <button type="button" class="btn btn-default" data-ng-click="extract()">Extract Names</button>
-    <div data-ng-if="states.revealthis">
+    <button type="button" class="btn btn-default" ng-click="extract()">Extract Names (click twice to reveal)</button>
+    <div ng-if="states.revealthis">
         <div class="row">
             <div class="col-md-2">Name</div>
             <div class="col-md-2"># of appearances</div>
-            <div class="col-md-8"></div>
+            <div class="col-md-8">{{model | json}}</div>
         </div>
-        <div class="row" data-ng-repeat="item in model">
+        <div class="row">
+            <div class="col-md-6">I was unable to get the Angular script to display a C# collection. It works with Entity Framework models but not collections, that requires a new module.</div>
+            <div class="col-md-6"></div>
+        </div>
+        <div class="row" ng-repeat="item in model">
             <div class="col-md-2">{{item.Name}}</div>
             <div class="col-md-2">{{item.Count}}</div>
             <div class="col-md-8"></div>
-        </div>
+        </div>        
     </div>
 
     <p id="text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas Connor Smith dignissim erat consequat, placerat erat in, lobortis nulla. Vestibulum scelerisque magna ut urna hendrerit, finibus rutrum dolor faucibus. Seth David Greenly Aliquam feugiat urna vel tellus congue, non dictum orci varius. Vivamus tristique, lorem ut hendrerit aliquet, nulla nisl eleifend quam, sed laoreet erat lorem non diam. Nulla facilisi. Etiam bibendum Seth D. Greenly nec diam sed vestibulum. Nunc ipsum enim, imperdiet eu feugiat vel, vestibulum a justo. Donec efficitur velit porta odio consequat viverra. Quisque in tristique enim, sed euismod purus. Nullam eu leo pellentesque, porta leo in, maximus risus. Morbi in risus id risus feugiat egestas. David Black Nunc egestas, metus at volutpat tempus, massa justo venenatis arcu, a ornare mauris arcu at justo. Sed accumsan, David W. Black erat vitae euismod facilisis, risus odio bibendum neque, sit amet tincidunt diam ante et dolor. Morbi leo felis, posuere id ex ut, varius ornare libero.</p>
